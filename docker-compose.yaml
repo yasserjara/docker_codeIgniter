@@ -1,0 +1,37 @@
+version: "3"
+services:
+    codeign:
+        build: .
+        container_name: 'codeign'
+        ports:
+          - 80:80
+        links:
+          - codeign_mysql
+        volumes:
+          - /Users/yajaru/Documents/Web/www:/var/www/html
+    codeign_mysql:
+        image: mariadb:10.5.5
+        container_name: 'codeign_mysql'
+        ports:
+          - 3306:3306
+        volumes:
+          - ./Users/yajaru/Documents/Web/dataBases/mysql:/var/lib/mysql
+          - ./Users/yajaru/Documents/Web/dataBases/logs/mysql:/var/log/mysql
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: codeigniter
+          MYSQL_USER: codeign
+          MYSQL_PASSWORD: rootcodeign
+    codeign_myadmin:
+        image: phpmyadmin/phpmyadmin:5.0.2
+        container_name: 'codeign_phpmyadmin'
+        links:
+          - codeign_mysql
+        environment:
+          PMA_HOST: codeign_mysql
+          PMA_PORT: 3306
+        ports:
+          - 8081:80
+        volumes:
+          - ./Users/yajaru/Documents/Web/sessions:/sessions
+
