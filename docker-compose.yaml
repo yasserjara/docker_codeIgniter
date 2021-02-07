@@ -23,7 +23,7 @@ services:
           MYSQL_USER: codeign
           MYSQL_PASSWORD: rootcodeign
     codeign_myadmin:
-        image: phpmyadmin/phpmyadmin:5.0.2
+        image: phpmyadmin/phpmyadmin:5.0.4
         container_name: 'codeign_phpmyadmin'
         links:
           - codeign_mysql
