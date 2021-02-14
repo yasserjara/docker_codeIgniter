@@ -29,10 +29,10 @@ RUN chmod +x /code.sh
 
 RUN cd /var/www/html
 
-RUN composer create-project codeigniter4/appstarter codeigniter4 v4.1.1
-RUN chmod -R 0777 /var/www/html/codeigniter4/writable
+RUN composer create-project codeigniter4/appstarter codeigniter
+RUN chmod -R 0777 /var/www/html/codeigniter/writable
 
-RUN mv codeigniter4 /
+RUN mv codeigniter /
 
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*

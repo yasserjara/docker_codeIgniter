@@ -8,15 +8,15 @@ services:
         links:
           - codeign_mariadb
         volumes:
-          - /Users/yajaru/Documents/Web/www:/var/www/html
+          - /Users/yajaru/Developing/www:/var/www/html
     codeign_mariadb:
         image: mariadb:10.5.8
         container_name: 'codeign_mariadb'
         ports:
           - 3306:3306
         volumes:
-          - /Users/yajaru/Documents/Web/dataBases/mysql:/var/lib/mysql
-          - /Users/yajaru/Documents/Web/dataBases/logs/mysql:/var/log/mysql
+          - /Users/yajaru/Developing/dataBases/mysql:/var/lib/mysql
+          - /Users/yajaru/Developing/dataBases/logs/mysql:/var/log/mysql
         environment:
           MYSQL_ROOT_PASSWORD: rootpassword
           MYSQL_DATABASE: codeigniter
@@ -33,5 +33,5 @@ services:
         ports:
           - 8081:80
         volumes:
-          - /Users/yajaru/Documents/Web/sessions:/sessions
+          - /Users/yajaru/Developing/sessions:/sessions
 
