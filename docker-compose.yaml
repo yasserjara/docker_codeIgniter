@@ -15,7 +15,7 @@ services:
         ports:
           - 3306:3306
         volumes:
-          - /Users/yajaru/Developing/dataBases/mysql:/var/lib/mysql
+          - /Users/yajaru/Developing/dataBases/lib/mysql:/var/lib/mysql
           - /Users/yajaru/Developing/dataBases/logs/mysql:/var/log/mysql
         environment:
           MYSQL_ROOT_PASSWORD: rootpassword
